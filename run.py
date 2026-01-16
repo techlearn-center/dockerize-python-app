@@ -28,6 +28,8 @@ class Colors:
 
 if sys.platform == 'win32':
     os.system('color')
+    # Fix Unicode encoding on Windows
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 CHECKS = [
     {"name": "Dockerfile exists", "points": 5},
