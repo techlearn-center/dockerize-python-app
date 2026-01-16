@@ -88,7 +88,7 @@ With Docker:
 ### Install Docker Desktop
 
 <details>
-<summary>🪟 Windows</summary>
+<summary>🪟 Windows (Docker Desktop - Recommended)</summary>
 
 1. Go to [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop/)
 2. Download "Docker Desktop for Windows"
@@ -96,6 +96,40 @@ With Docker:
 4. **Important:** Enable WSL 2 when prompted
 5. Restart your computer
 6. Open Docker Desktop and wait for "Docker is running"
+
+**Verify:**
+```bash
+docker --version
+# Should show: Docker version 24.x or higher
+```
+
+</details>
+
+<details>
+<summary>🪟 Windows (Chocolatey)</summary>
+
+If you have [Chocolatey](https://chocolatey.org/) installed, you can install Docker Desktop with one command:
+
+```powershell
+# Run PowerShell as Administrator
+choco install docker-desktop -y
+```
+
+After installation:
+1. Restart your computer
+2. Open Docker Desktop
+3. Wait for "Docker is running"
+
+**Don't have Chocolatey?** Install it first:
+```powershell
+# Run PowerShell as Administrator
+Set-ExecutionPolicy Bypass -Scope Process -Force
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+# Close and reopen PowerShell, then install Docker:
+choco install docker-desktop -y
+```
 
 **Verify:**
 ```bash
